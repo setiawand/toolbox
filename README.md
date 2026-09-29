@@ -62,6 +62,10 @@ switches the `$DEPLOY_PATH/current` symlink. The 5 newest releases are kept, so 
 3. Install `rsync` on the server and add the public key to the deploy user's `~/.ssh/authorized_keys`.
    Generate a key just for this: `ssh-keygen -t ed25519 -f deploy_key -N "" -C github-deploy`.
 4. Nginx: use `deploy/nginx.toolbox.conf` (adjust `root`), then `certbot --nginx -d toolbox.denisetiawan.me` for HTTPS.
+   The nginx worker user (usually `www-data`) must be able to read the files: every parent folder of `$DEPLOY_PATH`
+   needs the `o+x` bit and the release files `o+r` (e.g. `chmod 755 /var/www/toolbox`). A `403 Forbidden` after the first
+   deploy almost always means this. Check with `sudo -u www-data ls /var/www/toolbox/current`.
+   Then `sudo nginx -t && sudo systemctl reload nginx`.
 
 **GitHub repo → Settings → Secrets and variables → Actions → Secrets**
 
