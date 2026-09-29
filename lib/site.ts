@@ -1,4 +1,4 @@
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://tools.denisetiawan.me").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://toolbox.denisetiawan.me").replace(/\/$/, "");
 export const SITE_NAME = "Toolbox";
 
 export type Lang = "id" | "en";

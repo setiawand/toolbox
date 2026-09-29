@@ -2,7 +2,7 @@
   "name": "toolbox",
   "version": "0.1.0",
   "private": true,
-  "description": "Free, private, in-browser file and image tools (tools.denisetiawan.me)",
+  "description": "Free, private, in-browser file and image tools (toolbox.denisetiawan.me)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
